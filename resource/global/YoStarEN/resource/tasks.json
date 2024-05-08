@@ -50,6 +50,22 @@
             150
         ]
     },
+    "ZT-OpenOcr": {
+        "text": [
+            "Zwilling",
+            "sturme",
+            "Herbst",
+            "open"
+        ]
+    },
+    "ZTChapterToZT": {
+        "text": [
+            "Zwillingsturme",
+            "ZWILLINGSTURME",
+            "Anbeten",
+            "ANBETEN"
+        ]
+    },
     "CV-Open": {
         "text": [
             "Catastrophes",
@@ -1823,7 +1839,7 @@
                 "雪绒"
             ],
             [
-                "Vigil",
+                "Vigi[Iil]?",
                 "伺夜"
             ],
             [
@@ -2425,6 +2441,70 @@
             [
                 "Almond",
                 "杏仁"
+            ],
+            [
+                "Bloodcalling Altar",
+                "唤血祭坛"
+            ],
+            [
+                "Vendela",
+                "刺玫"
+            ],
+            [
+                "Hoederer",
+                "赫德雷"
+            ],
+            [
+                "Delphine",
+                "戴菲恩"
+            ],
+            [
+                "Verdant",
+                "维荻"
+            ],
+            [
+                "Bomb Loading Point",
+                "炸弹载荷点"
+            ],
+            [
+                "Throne of Blood",
+                "沥血王座"
+            ],
+            [
+                "Aspect of Annihilation",
+                "湮灭之相"
+            ],
+            [
+                "Diamante",
+                "折光"
+            ],
+            [
+                "Virtuosa",
+                "塑心"
+            ],
+            [
+                "Aspect of Creation",
+                "创生之相"
+            ],
+            [
+                "Lessing",
+                "止颂"
+            ],
+            [
+                "Viviana",
+                "薇薇安娜"
+            ],
+            [
+                "Caper",
+                "跃跃"
+            ],
+            [
+                "Bassline",
+                "深律"
+            ],
+            [
+                "Tuning Node",
+                "调谐节点"
             ]
         ]
     },
@@ -2457,6 +2537,9 @@
         "text": [
             "Start"
         ]
+    },
+    "StartButton2": {
+        "cache": false
     },
     "PRTS2": {
         "text": [
@@ -2553,15 +2636,6 @@
             "Expedite"
         ]
     },
-    "Award": {
-        "template": "Task.png",
-        "roi": [
-            665,
-            504,
-            252,
-            162
-        ]
-    },
     "NoFriends": {
         "text": [
             "No friends"
@@ -2584,7 +2658,8 @@
     },
     "Mall": {
         "text": [
-            "Store"
+            "Store",
+            "STORE"
         ]
     },
     "CreditStoreOcr": {
@@ -3918,6 +3993,22 @@
             [
                 "People-Oriented Squad",
                 "以人为本分队"
+            ],
+            [
+                "Scientific Thinking",
+                "科学主义分队"
+            ],
+            [
+                "Life Prioritizing Squad",
+                "生活至上分队"
+            ],
+            [
+                "Eternal Hunting Squad",
+                "永恒狩猎分队"
+            ],
+            [
+                "Special Training Squad",
+                "特训分队"
             ]
         ]
     },

@@ -447,6 +447,38 @@
         "sortId": 100010,
         "usage": "A compound crystal mass that has undergone high-tolerance refinement. Used in a variety of strengthening projects, and is a common material in synthetic items at factories."
     },
+    "31073": {
+        "classifyType": "MATERIAL",
+        "description": "A derived product in Originium engineering, widely used in industrial fields due to its exceptional functionality. In recent years, its unique appearance has also drawn keen interest from those working in design.",
+        "icon": "31073.png",
+        "name": "Fuscous Fiber",
+        "sortId": 100009,
+        "usage": "A specialized fiber bundle, possessing high tensile strength and elastic modulus. Used in a variety of strengthening projects."
+    },
+    "31074": {
+        "classifyType": "MATERIAL",
+        "description": "A compound fiber board crafted through bespoke manufacturing. Exhibits outstanding functionality, both physically and chemically, coupled with a rarely-seen ease of processing. An irreplaceable part of many an industrial workflow.",
+        "icon": "31074.png",
+        "name": "Solidified Fiber Board",
+        "sortId": 100008,
+        "usage": "A specialized fiber board, solidified in a mold. Used in a variety of strengthening projects."
+    },
+    "31083": {
+        "classifyType": "MATERIAL",
+        "description": "A novel transparent material born from the laboratory. Its high luminous transmittance and phenomenal durability in all aspects promise to make it an excellent substitute for many conventional materials.",
+        "icon": "31083.png",
+        "name": "Aggregate Cyclicene",
+        "sortId": 100007,
+        "usage": "A superlatively heat- and chemical-resistant industrial material. Used in a variety of strengthening projects."
+    },
+    "31084": {
+        "classifyType": "MATERIAL",
+        "description": "An industrial product arrived at through the introduction of several excellent materials into the synthesis process, preserving luminous transmittance while vastly increasing strength and shock resistance. Prospects are high for its wide adoption in the field of defense.",
+        "icon": "31084.png",
+        "name": "Cyclicene Prefab",
+        "sortId": 100006,
+        "usage": "A prefabricated industrial intermediate composed of multiple first-rate materials. Used in a variety of strengthening projects."
+    },
     "3112": {
         "classifyType": "NORMAL",
         "description": "One of the necessary industrial materials, it can be used to produce a variety of polymers.",
@@ -991,6 +1023,14 @@
         "sortId": 10021,
         "usage": "A time-limited currency arranged for a new type of headhunting contract; Collect enough to recruit an operator from a designated pool for a limited time"
     },
+    "LMTGS_COIN_4401": {
+        "classifyType": "NORMAL",
+        "description": "A long-term, stable relationship with the headhunting agency can effectively control our expenditures. However, we hope that this method will not be required every time.",
+        "icon": "LMTGS_COIN_4401.png",
+        "name": "Headhunting Data Contract",
+        "sortId": 10022,
+        "usage": "A time-limited currency arranged for a new type of headhunting contract; Collect enough to recruit an operator from a designated pool for a limited time"
+    },
     "LMTGS_COIN_601": {
         "classifyType": "NORMAL",
         "description": "A long-term, stable relationship with the headhunting agency can effectively control our expenditures. However, we hope that this method will not be required every time.",
@@ -1044,7 +1084,7 @@
         "description": "An auxiliary function of Rhodes Island's intelligence processing system. After extracting effective intelligence from a complex batch of information, the system was able to recreate images of past events with astonishing fidelity.\nThe information was packaged as videotapes to make it easier for ordinary people to understand.",
         "icon": "STORY_REVIEW_COIN.png",
         "name": "Information Fragments",
-        "sortId": 10202,
+        "sortId": 10203,
         "usage": "A topological model of effective intelligence that can be used to reconstruct past events."
     },
     "act10d5_token_biscuit": {
@@ -1519,6 +1559,46 @@
         "sortId": -10000,
         "usage": "Combustibles salvaged from Davistown and its environs. Practically worthless for heat, and produces way too much smoke, but fuel is fuel and there's an old worker by the energy tower who'll trade goods from the mine for it."
     },
+    "act29side_frag_1": {
+        "classifyType": "NONE",
+        "description": "Knock on the shut door and reach out. We should have been united through joy.",
+        "icon": "act29side_frag_1.png",
+        "name": "Note of Joy",
+        "sortId": 5200001,
+        "usage": "A piece of fallen memory, preserved with Arts. It pulses in your palm to the rhythm of emotion. It will be forged into a key before oblivion."
+    },
+    "act29side_frag_2": {
+        "classifyType": "NONE",
+        "description": "Knock on the shut door and reach out. We should have been united through anger.",
+        "icon": "act29side_frag_2.png",
+        "name": "Note of Anger",
+        "sortId": 5200002,
+        "usage": "A piece of fallen memory, preserved with Arts. It pulses in your palm to the rhythm of emotion. It will be forged into a key before oblivion."
+    },
+    "act29side_frag_3": {
+        "classifyType": "NONE",
+        "description": "Knock on the shut door and reach out. We should have been united through sorrow.",
+        "icon": "act29side_frag_3.png",
+        "name": "Note of Sorrow",
+        "sortId": 5200003,
+        "usage": "A piece of fallen memory, preserved with Arts. It pulses in your palm to the rhythm of emotion. It will be forged into a key before oblivion."
+    },
+    "act29side_frag_4": {
+        "classifyType": "NONE",
+        "description": "Knock on the shut door and reach out. We should have been united through fear.",
+        "icon": "act29side_frag_4.png",
+        "name": "Note of Fear",
+        "sortId": 5200004,
+        "usage": "A piece of fallen memory, preserved with Arts. It pulses in your palm to the rhythm of emotion. It will be forged into a key before oblivion."
+    },
+    "act29side_token_erin": {
+        "classifyType": "NONE",
+        "description": "Memories of the past are scattered across the ancient capital of Leithanien, carried by broken passages of music. Like today's Leithanien, they will need be tuned before they can be heard.",
+        "icon": "act29side_token_erin.png",
+        "name": "Die Klänge von den Erinnerungen",
+        "sortId": -10000,
+        "usage": "Leaves that fall on the streets of Zwillingstürme. Missing phrases of music can be found on them from time to time. Give them to tune seekers at concerts and be rewarded with the gift of music."
+    },
     "act2bossrush_milestone_point": {
         "classifyType": "NONE",
         "description": "Right and wrong are far from crucial in a simulation. They are only a form of support. They help you make the correct choices when the battle is real.",
@@ -1911,6 +1991,14 @@
         "sortId": -10000,
         "usage": "A disposable chip pack etching apparatus, storing large quantities of training records and data. Can print chip packs hassle-free, in accordance with Defender Operators' needs."
     },
+    "mcardVoucher": {
+        "classifyType": "NONE",
+        "description": null,
+        "icon": "mcardVoucher.png",
+        "name": "Monthly Card",
+        "sortId": -10000,
+        "usage": null
+    },
     "mod_unlock_token": {
         "classifyType": "MATERIAL",
         "description": "The data blocks record the endless nights the Engineering Department toiled away developing the various modules.",
@@ -2134,6 +2222,14 @@
         "name": "Rhodes Island Supplies VI",
         "sortId": 60109,
         "usage": "Filled with an assortment of supplies and materials."
+    },
+    "randomMaterial_leith2": {
+        "classifyType": "CONSUME",
+        "description": "'Though the contents are as unalike as the sounds of the heart, they will help you in your search for the truth. Follow the echoes not yet forgotten, and you will eventually find the answer.'",
+        "icon": "randomMaterial_leith2.png",
+        "name": "Investigation Resupply",
+        "sortId": 60113,
+        "usage": "Package from an unknown source containing various supplies, including random materials."
     },
     "randomMaterial_rhine2": {
         "classifyType": "CONSUME",

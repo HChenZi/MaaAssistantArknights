@@ -867,7 +867,7 @@ namespace MaaWpfGui.ViewModels.UI
 
             Instances.SettingsViewModel.SetupSleepManagement();
 
-            // 虽然更改时已经保存过了，不过保险起见还是在点击开始之后再保存一次任务及基建列表
+            // 虽然更改时已经保存过了，不过保险起见在点击开始之后再次保存任务和基建列表
             TaskItemSelectionChanged();
             Instances.SettingsViewModel.InfrastOrderSelectionChanged();
 
@@ -1092,7 +1092,7 @@ namespace MaaWpfGui.ViewModels.UI
 
             _runningState.SetIdle(false);
 
-            // 虽然更改时已经保存过了，不过保险起见还是在点击开始之后再保存一次任务及基建列表
+            // 虽然更改时已经保存过了，不过保险起见在点击开始之后再次保存任务和基建列表
             TaskItemSelectionChanged();
             Instances.SettingsViewModel.InfrastOrderSelectionChanged();
 
@@ -1346,8 +1346,10 @@ namespace MaaWpfGui.ViewModels.UI
             var receiveMail = Instances.SettingsViewModel.ReceiveMail;
             var receiveFreeRecruit = Instances.SettingsViewModel.ReceiveFreeRecruit;
             var receiveOrundum = Instances.SettingsViewModel.ReceiveOrundum;
+            var receiveMining = Instances.SettingsViewModel.ReceiveMining;
+            var receiveSpecialAccess = Instances.SettingsViewModel.ReceiveSpecialAccess;
 
-            return Instances.AsstProxy.AsstAppendAward(receiveAward, receiveMail, receiveFreeRecruit, receiveOrundum);
+            return Instances.AsstProxy.AsstAppendAward(receiveAward, receiveMail, receiveFreeRecruit, receiveOrundum, receiveMining, receiveSpecialAccess);
         }
 
         private static bool AppendRecruit()
@@ -1357,6 +1359,9 @@ namespace MaaWpfGui.ViewModels.UI
             {
                 maxTimes = 0;
             }
+
+            var firstList = Instances.SettingsViewModel.AutoRecruitFirstList.Split(';', '；')
+                .Select(s => s.Trim());
 
             var reqList = new List<int>();
             var cfmList = new List<int>();
@@ -1382,7 +1387,7 @@ namespace MaaWpfGui.ViewModels.UI
             int.TryParse(Instances.SettingsViewModel.SelectExtraTags, out var selectExtra);
 
             return Instances.AsstProxy.AsstAppendRecruit(
-                maxTimes, reqList.ToArray(), cfmList.ToArray(), Instances.SettingsViewModel.RefreshLevel3, Instances.SettingsViewModel.ForceRefresh, Instances.SettingsViewModel.UseExpedited,
+                maxTimes, firstList.ToArray(), reqList.ToArray(), cfmList.ToArray(), Instances.SettingsViewModel.RefreshLevel3, Instances.SettingsViewModel.ForceRefresh, Instances.SettingsViewModel.UseExpedited,
                 selectExtra, Instances.SettingsViewModel.NotChooseLevel1, Instances.SettingsViewModel.IsLevel3UseShortTime, Instances.SettingsViewModel.IsLevel3UseShortTime2);
         }
 
@@ -3038,22 +3043,22 @@ namespace MaaWpfGui.ViewModels.UI
         /// <summary>
         /// 关卡不可掉落的材料
         /// </summary>
-        private static readonly HashSet<string> _excludedValues = new()
-        {
+        private static readonly HashSet<string> _excludedValues =
+        [
             "3213", "3223", "3233", "3243", // 双芯片
-            "3253", "3263", "3273", "3283",
-            "7001", "7002", "7003", "7004", // 许可/凭证
-            "4004", "4005",
+            "3253", "3263", "3273", "3283", // 双芯片
+            "7001", "7002", "7003", "7004", // 许可
+            "4004", "4005",                 // 凭证
             "3105", "3131", "3132", "3233", // 龙骨/加固建材
-            "6001", // 演习券
-            "3141", "4002", // 源石
-            "32001", // 芯片助剂
-            "30115", // 聚合剂
-            "30125", // 双极纳米片
-            "30135", // D32钢
-            "30145", // 晶体电子单元
-            "30155", // 烧结核凝晶
-        };
+            "6001",                         // 演习券
+            "3141", "4002",                 // 源石
+            "32001",                        // 芯片助剂
+            "30115",                        // 聚合剂
+            "30125",                        // 双极纳米片
+            "30135",                        // D32钢
+            "30145",                        // 晶体电子单元
+            "30155",                        // 烧结核凝晶
+        ];
 
         private void InitDrops()
         {

@@ -28,7 +28,7 @@ bool asst::BattleHelper::set_stage_name(const std::string& name)
 {
     LogTraceFunction;
 
-    if (!Tile.find(name)) {
+    if (auto result = Tile.find(name); !result || !json::open(result->second)) {
         return false;
     }
     m_stage_name = name;
@@ -60,7 +60,7 @@ bool asst::BattleHelper::calc_tiles_info(
 {
     LogTraceFunction;
 
-    if (!Tile.find(stage_name)) {
+    if (auto result = Tile.find(stage_name); !result || !json::open(result->second)) {
         return false;
     }
 
@@ -388,7 +388,8 @@ bool asst::BattleHelper::deploy_oper(
     }
 
     if (deploy_with_pause) {
-        m_inst_helper.ctrler()->press_esc();
+        // m_inst_helper.ctrler()->press_esc();
+        ProcessTask(this_task(), { "BattlePause" }).run();
     }
 
     // for SSS, multiple operator may be deployed at the same location.
@@ -480,6 +481,7 @@ bool asst::BattleHelper::check_pause_button(const cv::Mat& reusable)
     ret &= battle_result_opt && battle_result_opt->pause_button;
     return ret;
 }
+
 bool asst::BattleHelper::check_skip_plot_button(const cv::Mat& reusable)
 {
     cv::Mat image = reusable.empty() ? m_inst_helper.ctrler()->get_image() : reusable;

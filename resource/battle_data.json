@@ -356,7 +356,7 @@
             "name_en": "Executor the Ex Foedere",
             "name_jp": "聖約イグゼキュター",
             "name_kr": "이그제큐터 디 엑스 포에데레",
-            "name_tw": "圣约送葬人",
+            "name_tw": "聖約送葬人",
             "position": "MELEE",
             "profession": "WARRIOR",
             "rangeId": [
@@ -398,6 +398,39 @@
                 "2-2"
             ],
             "rarity": 6
+        },
+        "char_1035_wisdel": {
+            "name": "维什戴尔",
+            "name_en": "维什戴尔",
+            "name_jp": "维什戴尔",
+            "name_kr": "维什戴尔",
+            "name_tw": "维什戴尔",
+            "position": "RANGED",
+            "profession": "SNIPER",
+            "rangeId": [
+                "3-3",
+                "3-9",
+                "3-9"
+            ],
+            "rarity": 6,
+            "tokens": [
+                "魂灵之影"
+            ]
+        },
+        "char_1036_fang2": {
+            "name": "历阵锐枪芬",
+            "name_en": "历阵锐枪芬",
+            "name_jp": "历阵锐枪芬",
+            "name_kr": "历阵锐枪芬",
+            "name_tw": "历阵锐枪芬",
+            "position": "MELEE",
+            "profession": "PIONEER",
+            "rangeId": [
+                "1-1",
+                "1-1",
+                "1-1"
+            ],
+            "rarity": 5
         },
         "char_103_angel": {
             "name": "能天使",
@@ -1885,9 +1918,9 @@
         },
         "char_245_cello": {
             "name": "塑心",
-            "name_en": "塑心",
-            "name_jp": "塑心",
-            "name_kr": "塑心",
+            "name_en": "Virtuosa",
+            "name_jp": "ヴィルトゥオーサ",
+            "name_kr": "비르투오사",
             "name_tw": "塑心",
             "position": "RANGED",
             "profession": "SUPPORT",
@@ -3144,9 +3177,9 @@
         },
         "char_4011_lessng": {
             "name": "止颂",
-            "name_en": "止颂",
-            "name_jp": "止颂",
-            "name_kr": "止颂",
+            "name_en": "Lessing",
+            "name_jp": "レッシング",
+            "name_kr": "레싱",
             "name_tw": "止颂",
             "position": "MELEE",
             "profession": "WARRIOR",
@@ -3192,7 +3225,7 @@
             "name_en": "Spuria",
             "name_jp": "スプリア",
             "name_kr": "스푸리아",
-            "name_tw": "空构",
+            "name_tw": "空構",
             "position": "RANGED",
             "profession": "SPECIAL",
             "rangeId": [
@@ -3770,9 +3803,9 @@
         },
         "char_4088_hodrer": {
             "name": "赫德雷",
-            "name_en": "赫德雷",
-            "name_jp": "赫德雷",
-            "name_kr": "赫德雷",
+            "name_en": "Hoederer",
+            "name_jp": "へドリー",
+            "name_kr": "외드레르",
             "name_tw": "赫德雷",
             "position": "MELEE",
             "profession": "WARRIOR",
@@ -3815,9 +3848,9 @@
         },
         "char_4098_vvana": {
             "name": "薇薇安娜",
-            "name_en": "薇薇安娜",
-            "name_jp": "薇薇安娜",
-            "name_kr": "薇薇安娜",
+            "name_en": "Viviana",
+            "name_jp": "ヴィヴィアナ",
+            "name_kr": "비비아나",
             "name_tw": "薇薇安娜",
             "position": "MELEE",
             "profession": "WARRIOR",
@@ -3830,9 +3863,9 @@
         },
         "char_4100_caper": {
             "name": "跃跃",
-            "name_en": "跃跃",
-            "name_jp": "跃跃",
-            "name_kr": "跃跃",
+            "name_en": "Caper",
+            "name_jp": "ケイパー",
+            "name_kr": "케이퍼",
             "name_tw": "跃跃",
             "position": "RANGED",
             "profession": "SNIPER",
@@ -3905,9 +3938,9 @@
         },
         "char_4107_vrdant": {
             "name": "维荻",
-            "name_en": "维荻",
-            "name_jp": "维荻",
-            "name_kr": "维荻",
+            "name_en": "Verdant",
+            "name_jp": "ヴァーダント",
+            "name_kr": "버던트",
             "name_tw": "维荻",
             "position": "MELEE",
             "profession": "SPECIAL",
@@ -3920,9 +3953,9 @@
         },
         "char_4109_baslin": {
             "name": "深律",
-            "name_en": "深律",
-            "name_jp": "深律",
-            "name_kr": "深律",
+            "name_en": "Bassline",
+            "name_jp": "ベースライン",
+            "name_kr": "베이스라인",
             "name_tw": "深律",
             "position": "MELEE",
             "profession": "TANK",
@@ -3935,9 +3968,9 @@
         },
         "char_4110_delphn": {
             "name": "戴菲恩",
-            "name_en": "戴菲恩",
-            "name_jp": "戴菲恩",
-            "name_kr": "戴菲恩",
+            "name_en": "Delphine",
+            "name_jp": "デルフィーン",
+            "name_kr": "델핀",
             "name_tw": "戴菲恩",
             "position": "RANGED",
             "profession": "CASTER",
@@ -4160,6 +4193,51 @@
                 "y-1"
             ],
             "rarity": 6
+        },
+        "char_4133_logos": {
+            "name": "逻各斯",
+            "name_en": "逻各斯",
+            "name_jp": "逻各斯",
+            "name_kr": "逻各斯",
+            "name_tw": "逻各斯",
+            "position": "RANGED",
+            "profession": "CASTER",
+            "rangeId": [
+                "3-6",
+                "3-1",
+                "3-1"
+            ],
+            "rarity": 6
+        },
+        "char_4134_cetsyr": {
+            "name": "魔王",
+            "name_en": "魔王",
+            "name_jp": "魔王",
+            "name_kr": "魔王",
+            "name_tw": "魔王",
+            "position": "RANGED",
+            "profession": "SUPPORT",
+            "rangeId": [
+                "x-4",
+                "x-1",
+                "x-1"
+            ],
+            "rarity": 6
+        },
+        "char_4136_phonor": {
+            "name": "PhonoR-0",
+            "name_en": "PhonoR-0",
+            "name_jp": "PhonoR-0",
+            "name_kr": "PhonoR-0",
+            "name_tw": "PhonoR-0",
+            "position": "RANGED",
+            "profession": "SUPPORT",
+            "rangeId": [
+                "y-2",
+                "y-2",
+                "y-2"
+            ],
+            "rarity": 1
         },
         "char_415_flint": {
             "name": "燧石",
@@ -4778,9 +4856,9 @@
         },
         "char_494_vendla": {
             "name": "刺玫",
-            "name_en": "刺玫",
-            "name_jp": "刺玫",
-            "name_kr": "刺玫",
+            "name_en": "Vendela",
+            "name_jp": "ヴァンデラ",
+            "name_kr": "벤델라",
             "name_tw": "刺玫",
             "position": "RANGED",
             "profession": "MEDIC",
@@ -4826,7 +4904,7 @@
             "name_en": "Insider",
             "name_jp": "インサイダー",
             "name_kr": "인사이더",
-            "name_tw": "隐现",
+            "name_tw": "隱現",
             "position": "RANGED",
             "profession": "SNIPER",
             "rangeId": [
@@ -4838,9 +4916,9 @@
         },
         "char_499_kaitou": {
             "name": "折光",
-            "name_en": "折光",
-            "name_jp": "折光",
-            "name_kr": "折光",
+            "name_en": "Diamante",
+            "name_jp": "ディアマンテ",
+            "name_kr": "디아만테",
             "name_tw": "折光",
             "position": "RANGED",
             "profession": "CASTER",
@@ -5306,7 +5384,7 @@
             "name_en": "'Clip'",
             "name_jp": "「クリップ」",
             "name_kr": "'클립'",
-            "name_tw": "\"夾子\"",
+            "name_tw": "“夾子”",
             "position": "MELEE",
             "profession": "TOKEN",
             "rangeId": [
@@ -5336,7 +5414,7 @@
             "name_en": "'Freeling'",
             "name_jp": "「小自在」",
             "name_kr": "'작은 즈자이'",
-            "name_tw": "\"小自在\"",
+            "name_tw": "“小自在”",
             "position": "MELEE",
             "profession": "TOKEN",
             "rangeId": [
@@ -5688,6 +5766,21 @@
                 "x-4",
                 "x-4",
                 "x-4"
+            ],
+            "rarity": 6
+        },
+        "token_10035_wisdel_wward": {
+            "name": "魂灵之影",
+            "name_en": "魂灵之影",
+            "name_jp": "魂灵之影",
+            "name_kr": "魂灵之影",
+            "name_tw": "魂灵之影",
+            "position": "ALL",
+            "profession": "TOKEN",
+            "rangeId": [
+                "0-1",
+                "0-1",
+                "0-1"
             ],
             "rarity": 6
         },
@@ -7391,7 +7484,7 @@
             "name_en": "Holy Statue",
             "name_jp": "聖像",
             "name_kr": "성상",
-            "name_tw": "圣像",
+            "name_tw": "聖像",
             "position": "NONE",
             "profession": "TRAP",
             "rangeId": [
@@ -7406,7 +7499,7 @@
             "name_en": "Crumbling Masonry",
             "name_jp": "崩れた壁",
             "name_kr": "무너진 담장",
-            "name_tw": "塌落的墙垣",
+            "name_tw": "塌落的牆垣",
             "position": "NONE",
             "profession": "TRAP",
             "rangeId": [
@@ -7421,7 +7514,7 @@
             "name_en": "Spare Timber",
             "name_jp": "予備木材",
             "name_kr": "비상용 목재",
-            "name_tw": "备用木材",
+            "name_tw": "備用木材",
             "position": "NONE",
             "profession": "TRAP",
             "rangeId": [
@@ -7436,7 +7529,7 @@
             "name_en": "Shabby Fence",
             "name_jp": "朽ちた木の柵",
             "name_kr": "낡은 울타리",
-            "name_tw": "破旧的木篱",
+            "name_tw": "破舊的木籬",
             "position": "NONE",
             "profession": "TRAP",
             "rangeId": [
@@ -7508,9 +7601,9 @@
         },
         "trap_125_bonore": {
             "name": "唤血祭坛",
-            "name_en": "唤血祭坛",
-            "name_jp": "唤血祭坛",
-            "name_kr": "唤血祭坛",
+            "name_en": "Bloodcalling Altar",
+            "name_jp": "血の祭壇",
+            "name_kr": "피의 제단",
             "name_tw": "唤血祭坛",
             "position": "NONE",
             "profession": "TRAP",
@@ -7523,9 +7616,9 @@
         },
         "trap_126_outset": {
             "name": "炸弹载荷点",
-            "name_en": "炸弹载荷点",
-            "name_jp": "炸弹载荷点",
-            "name_kr": "炸弹载荷点",
+            "name_en": "Bomb Loading Point",
+            "name_jp": "爆弾装填点",
+            "name_kr": "폭탄 적재 지점",
             "name_tw": "炸弹载荷点",
             "position": "NONE",
             "profession": "TRAP",
@@ -7538,9 +7631,9 @@
         },
         "trap_127_bldore": {
             "name": "沥血王座",
-            "name_en": "沥血王座",
-            "name_jp": "沥血王座",
-            "name_kr": "沥血王座",
+            "name_en": "Throne of Blood",
+            "name_jp": "血誓の王座",
+            "name_kr": "생귀나르의 왕좌",
             "name_tw": "沥血王座",
             "position": "NONE",
             "profession": "TRAP",
@@ -7643,9 +7736,9 @@
         },
         "trap_134_condtr": {
             "name": "调谐节点",
-            "name_en": "调谐节点",
-            "name_jp": "调谐节点",
-            "name_kr": "调谐节点",
+            "name_en": "Tuning Node",
+            "name_jp": "調律器",
+            "name_kr": "조화 장치",
             "name_tw": "调谐节点",
             "position": "NONE",
             "profession": "TRAP",
@@ -7658,9 +7751,9 @@
         },
         "trap_135_portlent": {
             "name": "湮灭之相",
-            "name_en": "湮灭之相",
-            "name_jp": "湮灭之相",
-            "name_kr": "湮灭之相",
+            "name_en": "Aspect of Annihilation",
+            "name_jp": "湮滅の相",
+            "name_kr": "파멸의 상",
             "name_tw": "湮灭之相",
             "position": "NONE",
             "profession": "TRAP",
@@ -7673,9 +7766,9 @@
         },
         "trap_136_portlexi": {
             "name": "创生之相",
-            "name_en": "创生之相",
-            "name_jp": "创生之相",
-            "name_kr": "创生之相",
+            "name_en": "Aspect of Creation",
+            "name_jp": "創生の相",
+            "name_kr": "창조의 상",
             "name_tw": "创生之相",
             "position": "NONE",
             "profession": "TRAP",
@@ -7866,12 +7959,102 @@
             ],
             "rarity": 1
         },
+        "trap_158_lrsteam": {
+            "name": "查尔斯·林奇",
+            "name_en": "查尔斯·林奇",
+            "name_jp": "查尔斯·林奇",
+            "name_kr": "查尔斯·林奇",
+            "name_tw": "查尔斯·林奇",
+            "position": "NONE",
+            "profession": "TRAP",
+            "rangeId": [
+                "1-1",
+                "1-1",
+                "1-1"
+            ],
+            "rarity": 1
+        },
+        "trap_159_lrcore": {
+            "name": "核心增幅器",
+            "name_en": "核心增幅器",
+            "name_jp": "核心增幅器",
+            "name_kr": "核心增幅器",
+            "name_tw": "核心增幅器",
+            "position": "NONE",
+            "profession": "TRAP",
+            "rangeId": [
+                "0-1",
+                "0-1",
+                "0-1"
+            ],
+            "rarity": 1
+        },
+        "trap_160_lrlgun": {
+            "name": "洪流束激发器",
+            "name_en": "洪流束激发器",
+            "name_jp": "洪流束激发器",
+            "name_kr": "洪流束激发器",
+            "name_tw": "洪流束激发器",
+            "position": "NONE",
+            "profession": "TRAP",
+            "rangeId": [
+                "0-1",
+                "0-1",
+                "0-1"
+            ],
+            "rarity": 1
+        },
+        "trap_161_lrcage": {
+            "name": "枯朽祭坛",
+            "name_en": "枯朽祭坛",
+            "name_jp": "枯朽祭坛",
+            "name_kr": "枯朽祭坛",
+            "name_tw": "枯朽祭坛",
+            "position": "NONE",
+            "profession": "TRAP",
+            "rangeId": [
+                "0-1",
+                "0-1",
+                "0-1"
+            ],
+            "rarity": 1
+        },
+        "trap_162_lrctrl": {
+            "name": "十四章机制控制器",
+            "name_en": "十四章机制控制器",
+            "name_jp": "十四章机制控制器",
+            "name_kr": "十四章机制控制器",
+            "name_tw": "十四章机制控制器",
+            "position": "NONE",
+            "profession": "TRAP",
+            "rangeId": [
+                "0-1",
+                "0-1",
+                "0-1"
+            ],
+            "rarity": 1
+        },
         "trap_163_foolcrate": {
             "name": "障碍物",
             "name_en": "障碍物",
             "name_jp": "障碍物",
             "name_kr": "障碍物",
             "name_tw": "障碍物",
+            "position": "NONE",
+            "profession": "TRAP",
+            "rangeId": [
+                "0-1",
+                "0-1",
+                "0-1"
+            ],
+            "rarity": 1
+        },
+        "trap_164_lrsiege": {
+            "name": "振奋荣光",
+            "name_en": "振奋荣光",
+            "name_jp": "振奋荣光",
+            "name_kr": "振奋荣光",
+            "name_tw": "振奋荣光",
             "position": "NONE",
             "profession": "TRAP",
             "rangeId": [
@@ -9057,6 +9240,81 @@
             "name_jp": "埋没金属箱",
             "name_kr": "埋没金属箱",
             "name_tw": "埋没金属箱",
+            "position": "NONE",
+            "profession": "TRAP",
+            "rangeId": [
+                "0-1",
+                "0-1",
+                "0-1"
+            ],
+            "rarity": 1
+        },
+        "trap_482_xbblure": {
+            "name": "源石虫引诱器",
+            "name_en": "源石虫引诱器",
+            "name_jp": "源石虫引诱器",
+            "name_kr": "源石虫引诱器",
+            "name_tw": "源石虫引诱器",
+            "position": "NONE",
+            "profession": "TRAP",
+            "rangeId": [
+                "0-1",
+                "0-1",
+                "0-1"
+            ],
+            "rarity": 1
+        },
+        "trap_483_xbtrophy": {
+            "name": "“源石虫之心”",
+            "name_en": "“源石虫之心”",
+            "name_jp": "“源石虫之心”",
+            "name_kr": "“源石虫之心”",
+            "name_tw": "“源石虫之心”",
+            "position": "NONE",
+            "profession": "TRAP",
+            "rangeId": [
+                "0-1",
+                "0-1",
+                "0-1"
+            ],
+            "rarity": 1
+        },
+        "trap_484_xbcp": {
+            "name": "检查点",
+            "name_en": "检查点",
+            "name_jp": "检查点",
+            "name_kr": "检查点",
+            "name_tw": "检查点",
+            "position": "NONE",
+            "profession": "TRAP",
+            "rangeId": [
+                "0-1",
+                "0-1",
+                "0-1"
+            ],
+            "rarity": 1
+        },
+        "trap_485_xbrandprop": {
+            "name": "随机道具盒",
+            "name_en": "随机道具盒",
+            "name_jp": "随机道具盒",
+            "name_kr": "随机道具盒",
+            "name_tw": "随机道具盒",
+            "position": "NONE",
+            "profession": "TRAP",
+            "rangeId": [
+                "0-1",
+                "0-1",
+                "0-1"
+            ],
+            "rarity": 1
+        },
+        "trap_486_xbspd": {
+            "name": "加速块",
+            "name_en": "加速块",
+            "name_jp": "加速块",
+            "name_kr": "加速块",
+            "name_tw": "加速块",
             "position": "NONE",
             "profession": "TRAP",
             "rangeId": [

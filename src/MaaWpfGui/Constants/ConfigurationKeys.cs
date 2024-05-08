@@ -32,6 +32,7 @@ namespace MaaWpfGui.Constants
         public const string Localization = "GUI.Localization";
         public const string MinimizeToTray = "GUI.MinimizeToTray";
         public const string HideCloseButton = "GUI.HideCloseButton";
+        public const string WindowTitleScrollable = "GUI.WindowTitleScrollable";
         public const string UseLogItemDateFormat = "GUI.UseLogItemDateFormat";
         public const string LogItemDateFormat = "GUI.LogItemDateFormatString";
         public const string WindowPlacement = "GUI.Placement";
@@ -42,6 +43,7 @@ namespace MaaWpfGui.Constants
         public const string CustomStageCode = "GUI.CustomStageCode";
         public const string InverseClearMode = "GUI.InverseClearMode";
         public const string WindowTitlePrefix = "GUI.WindowTitlePrefix";
+        public const string WindowTitleSelectShowList = "GUI.WindowTitleSelectShowList";
         public const string SoberLanguage = "GUI.SoberLanguage";
         public const string Cheers = "GUI.Cheers";
         public const string Hangover = "GUI.Hangover";
@@ -53,6 +55,10 @@ namespace MaaWpfGui.Constants
         public const string ConnectAddress = "Connect.Address";
         public const string AdbPath = "Connect.AdbPath";
         public const string ConnectConfig = "Connect.ConnectConfig";
+        public const string MuMu12ExtrasEnabled = "Connect.MuMu12Extras.Enabled";
+        public const string MuMu12EmulatorPath = "Connect.MuMu12EmulatorPath";
+        public const string MuMu12Index = "Connect.MuMu12Index";
+        public const string MuMu12Display = "Connect.MuMu12Display";
         public const string RetryOnAdbDisconnected = "Connect.RetryOnDisconnected";
         public const string AllowAdbRestart = "Connect.AllowADBRestart";
         public const string AllowAdbHardRestart = "Connect.AllowADBHardRestart";
@@ -129,6 +135,7 @@ namespace MaaWpfGui.Constants
         public const string CreditFightSelectFormation = "Visit.CreditFightSelectFormation";
 
         public const string RecruitMaxTimes = "AutoRecruit.MaxTimes";
+        public const string AutoRecruitFirstList = "AutoRecruit.AutoRecruitFirstList";
         public const string RefreshLevel3 = "AutoRecruit.RefreshLevel3";
         public const string ForceRefresh = "AutoRecruit.ForceRefresh";
         public const string SelectExtraTags = "AutoRecruit.SelectExtraTags";
@@ -151,12 +158,12 @@ namespace MaaWpfGui.Constants
         public const string ReceiveMail = "Mission.ReceiveMail";
         public const string ReceiveFreeRecruit = "Mission.ReceiveFreeRecruit";
         public const string ReceiveOrundum = "Mission.ReceiveOrundum";
-
+        public const string ReceiveMining = "Mission.ReceiveMining";
+        public const string ReceiveSpecialAccess = "Mission.ReceiveSpecialAccess";
         public const string CopilotAddUserAdditional = "Copilot.AddUserAdditional";
         public const string CopilotUserAdditional = "Copilot.UserAdditional";
         public const string CopilotLoopTimes = "Copilot.LoopTimes";
         public const string CopilotTaskList = "Copilot.CopilotTaskList";
-
         public const string UpdateProxy = "VersionUpdate.Proxy";
         public const string VersionType = "VersionUpdate.VersionType";
         public const string UpdateCheck = "VersionUpdate.UpdateCheck";

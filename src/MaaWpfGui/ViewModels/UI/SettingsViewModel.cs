@@ -21,6 +21,7 @@ using System.IO;
 using System.IO.Compression;
 using System.Linq;
 using System.Management;
+using System.Printing;
 using System.Reflection;
 using System.Runtime.CompilerServices;
 using System.Runtime.InteropServices;
@@ -1798,8 +1799,10 @@ namespace MaaWpfGui.ViewModels.UI
                     case NotifyType.ScrollOffset:
                         SetAndNotify(ref _selectedIndex, value);
                         break;
+
                     case NotifyType.SelectedIndex:
                         break;
+
                     default:
                         throw new ArgumentOutOfRangeException();
                 }
@@ -1848,8 +1851,10 @@ namespace MaaWpfGui.ViewModels.UI
                     case NotifyType.SelectedIndex:
                         SetAndNotify(ref _scrollOffset, value);
                         break;
+
                     case NotifyType.ScrollOffset:
                         break;
+
                     default:
                         throw new ArgumentOutOfRangeException();
                 }
@@ -1937,13 +1942,6 @@ namespace MaaWpfGui.ViewModels.UI
                     return;
                 }
 
-                if (!string.IsNullOrEmpty(value) && DataHelper.GetCharacterByNameOrAlias(value) is null)
-                {
-                    MessageBoxHelper.Show(
-                        string.Format(LocalizationHelper.GetString("RoguelikeStartingCoreCharNotFound"), value),
-                        LocalizationHelper.GetString("Tip"));
-                }
-
                 SetAndNotify(ref _roguelikeCoreChar, value);
                 Instances.TaskQueueViewModel.AddLog(value);
                 ConfigurationHelper.SetValue(ConfigurationKeys.RoguelikeCoreChar, value);
@@ -1958,7 +1956,15 @@ namespace MaaWpfGui.ViewModels.UI
         public ObservableCollection<string> RoguelikeCoreCharList
         {
             get => _roguelikeCoreCharList;
-            private set => SetAndNotify(ref _roguelikeCoreCharList, value);
+            private set
+            {
+                if (!string.IsNullOrEmpty(RoguelikeCoreChar) && !value.Contains(RoguelikeCoreChar))
+                {
+                    value.Add(RoguelikeCoreChar);
+                }
+
+                SetAndNotify(ref _roguelikeCoreCharList, value);
+            }
         }
 
         private string _roguelikeStartWithEliteTwo = ConfigurationHelper.GetValue(ConfigurationKeys.RoguelikeStartWithEliteTwo, false.ToString());
@@ -1976,6 +1982,7 @@ namespace MaaWpfGui.ViewModels.UI
                     case true when RoguelikeUseSupportUnit:
                         RoguelikeUseSupportUnit = false;
                         break;
+
                     case false when RoguelikeOnlyStartWithEliteTwo:
                         RoguelikeOnlyStartWithEliteTwo = false;
                         break;
@@ -2463,6 +2470,37 @@ namespace MaaWpfGui.ViewModels.UI
             }
         }
 
+        private bool _receiveMining = bool.Parse(ConfigurationHelper.GetValue(ConfigurationKeys.ReceiveMining, false.ToString()));
+
+        /// <summary>
+        /// Gets or sets a value indicating whether receive mining is enabled.
+        /// </summary>
+        public bool ReceiveMining
+        {
+            get => _receiveMining;
+            set
+            {
+                SetAndNotify(ref _receiveMining, value);
+                ConfigurationHelper.SetValue(ConfigurationKeys.ReceiveMining, value.ToString());
+            }
+        }
+
+        private bool _receiveReceiveSpecialAccess = bool.Parse(ConfigurationHelper.GetValue(ConfigurationKeys.ReceiveSpecialAccess, false.ToString()));
+
+        /// <summary>
+        /// Gets or sets a value indicating whether to collect special access rewards.
+        /// </summary>
+
+        public bool ReceiveSpecialAccess
+        {
+            get => _receiveReceiveSpecialAccess;
+            set
+            {
+                SetAndNotify(ref _receiveReceiveSpecialAccess, value);
+                ConfigurationHelper.SetValue(ConfigurationKeys.ReceiveSpecialAccess, value.ToString());
+            }
+        }
+
         /* 定时设置 */
 
         public class TimerModel
@@ -2697,6 +2735,21 @@ namespace MaaWpfGui.ViewModels.UI
         }
 
         /* 自动公招设置 */
+        private string _autoRecruitFirstList = ConfigurationHelper.GetValue(ConfigurationKeys.AutoRecruitFirstList, string.Empty);
+
+        /// <summary>
+        /// Gets or sets the priority tag list of level-3 tags.
+        /// </summary>
+        public string AutoRecruitFirstList
+        {
+            get => _autoRecruitFirstList;
+            set
+            {
+                SetAndNotify(ref _autoRecruitFirstList, value);
+                ConfigurationHelper.SetValue(ConfigurationKeys.AutoRecruitFirstList, value);
+            }
+        }
+
         private string _recruitMaxTimes = ConfigurationHelper.GetValue(ConfigurationKeys.RecruitMaxTimes, "4");
 
         /// <summary>
@@ -3226,6 +3279,119 @@ namespace MaaWpfGui.ViewModels.UI
             }
         }
 
+        public class MuMuEmulator12ConnectionExtras : INotifyPropertyChanged
+        {
+            public event PropertyChangedEventHandler PropertyChanged;
+
+            protected void OnPropertyChanged([CallerMemberName] string name = null)
+            {
+                PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(name));
+            }
+
+            private bool _enable = Convert.ToBoolean(ConfigurationHelper.GetValue(ConfigurationKeys.MuMu12ExtrasEnabled, bool.FalseString));
+
+            public bool Enable
+            {
+                get => _enable;
+                set
+                {
+                    if (_enable == value)
+                    {
+                        return;
+                    }
+
+                    _enable = value;
+                    Instances.AsstProxy.Connected = false;
+                    OnPropertyChanged();
+                    ConfigurationHelper.SetValue(ConfigurationKeys.MuMu12ExtrasEnabled, value.ToString());
+                }
+            }
+
+            private static readonly string _configuredPath = ConfigurationHelper.GetValue(ConfigurationKeys.MuMu12EmulatorPath, string.Empty);
+            private string _emulatorPath = Directory.Exists(_configuredPath) ? _configuredPath : string.Empty;
+
+            /// <summary>
+            /// Gets or sets a value indicating the path of the emulator.
+            /// </summary>
+            public string EmulatorPath
+            {
+                get => _emulatorPath;
+                set
+                {
+                    if (!Directory.Exists(value))
+                    {
+                        MessageBoxHelper.Show("MuMu Emulator 12 Path Not Found");
+                        value = string.Empty;
+                    }
+
+                    _emulatorPath = value;
+                    Instances.AsstProxy.Connected = false;
+                    OnPropertyChanged();
+                    ConfigurationHelper.SetValue(ConfigurationKeys.MuMu12EmulatorPath, value);
+                }
+            }
+
+            private string _index = ConfigurationHelper.GetValue(ConfigurationKeys.MuMu12Index, "0");
+
+            /// <summary>
+            /// Gets or sets the index of the emulator.
+            /// </summary>
+            public string Index
+            {
+                get => _index;
+                set
+                {
+                    _index = value;
+                    Instances.AsstProxy.Connected = false;
+                    OnPropertyChanged();
+                    ConfigurationHelper.SetValue(ConfigurationKeys.MuMu12Index, value);
+                }
+            }
+
+            private string _display = ConfigurationHelper.GetValue(ConfigurationKeys.MuMu12Display, "0");
+
+            /// <summary>
+            /// Gets or sets the display of the emulator.
+            /// </summary>
+            public string Display
+            {
+                get => _display;
+                set
+                {
+                    _display = value;
+                    Instances.AsstProxy.Connected = false;
+                    OnPropertyChanged();
+                    ConfigurationHelper.SetValue(ConfigurationKeys.MuMu12Display, _display);
+                }
+            }
+
+            public string Config
+            {
+                get
+                {
+                    if (!Enable)
+                    {
+                        return JsonConvert.SerializeObject(new JObject());
+                    }
+
+                    var configObject = new JObject
+                    {
+                        ["path"] = EmulatorPath,
+                        ["index"] = int.TryParse(Index, out var indexParse) ? indexParse : 0,
+                        ["display"] = int.TryParse(Display, out var displayParse) ? displayParse : 0,
+                    };
+                    return JsonConvert.SerializeObject(configObject);
+                }
+            }
+
+            public MuMuEmulator12ConnectionExtras()
+            {
+                PropertyChanged += (_, _) => { };
+            }
+        }
+
+        public MuMuEmulator12ConnectionExtras MuMuEmulator12Extras { get; set; } = new();
+
         private bool _retryOnDisconnected = Convert.ToBoolean(ConfigurationHelper.GetValue(ConfigurationKeys.RetryOnAdbDisconnected, bool.FalseString));
 
         /// <summary>
@@ -3366,6 +3532,7 @@ namespace MaaWpfGui.ViewModels.UI
                 case 0:
                     error = LocalizationHelper.GetString("EmulatorNotFound");
                     return false;
+
                 case > 1:
                     error = LocalizationHelper.GetString("EmulatorTooMany");
                     break;
@@ -3386,6 +3553,7 @@ namespace MaaWpfGui.ViewModels.UI
                 case 1:
                     ConnectAddress = addresses.First();
                     break;
+
                 case > 1:
                     {
                         foreach (var address in addresses.Where(address => address != "emulator-5554"))
@@ -3452,11 +3620,6 @@ namespace MaaWpfGui.ViewModels.UI
         public void UpdateWindowTitle()
         {
             var rvm = (RootViewModel)this.Parent;
-            var connectConfigName = string.Empty;
-            foreach (var data in ConnectConfigList.Where(data => data.Value == ConnectConfig))
-            {
-                connectConfigName = data.Display;
-            }
 
             string prefix = ConfigurationHelper.GetValue(ConfigurationKeys.WindowTitlePrefix, string.Empty);
             if (!string.IsNullOrEmpty(prefix))
@@ -3464,8 +3627,43 @@ namespace MaaWpfGui.ViewModels.UI
                 prefix += " - ";
             }
 
+            List<string> windowTitleSelectShowList = _windowTitleSelectShowList
+                .Where(x => _windowTitleAllShowDict.ContainsKey(x?.ToString() ?? string.Empty))
+                .Select(x => _windowTitleAllShowDict[x?.ToString() ?? string.Empty]).ToList();
+
+            string currentConfiguration = string.Empty;
+            string connectConfigName = string.Empty;
+            string connectAddress = string.Empty;
+            string clientName = string.Empty;
+
+            foreach (var select in windowTitleSelectShowList)
+            {
+                switch (select)
+                {
+                    case "1": // 配置名
+                        currentConfiguration = $" ({CurrentConfiguration})";
+                        break;
+
+                    case "2": // 连接模式
+                        foreach (var data in ConnectConfigList.Where(data => data.Value == ConnectConfig))
+                        {
+                            connectConfigName = $" - {data.Display}";
+                        }
+
+                        break;
+
+                    case "3": // 端口地址
+                        connectAddress = $" ({ConnectAddress})";
+                        break;
+
+                    case "4": // 客户端类型
+                        clientName = $" - {ClientName}";
+                        break;
+                }
+            }
+
             string resourceVersion = !string.IsNullOrEmpty(ResourceVersion) ? $" - {ResourceVersion}" : string.Empty;
-            rvm.WindowTitle = $"{prefix}MAA ({CurrentConfiguration}) - {CoreVersion}{resourceVersion} - {connectConfigName} ({ConnectAddress}) - {ClientName}";
+            rvm.WindowTitle = $"{prefix}MAA{currentConfiguration} - {CoreVersion}{resourceVersion}{connectConfigName}{connectAddress}{clientName}";
         }
 
         private readonly string _bluestacksConfig = GetBluestacksConfig();
@@ -3700,6 +3898,23 @@ namespace MaaWpfGui.ViewModels.UI
             }
         }
 
+        private bool _windowTitleScrollable = Convert.ToBoolean(ConfigurationHelper.GetValue(ConfigurationKeys.WindowTitleScrollable, bool.FalseString));
+
+        /// <summary>
+        /// Gets or sets a value indicating whether to make window title scrollable.
+        /// </summary>
+        public bool WindowTitleScrollable
+        {
+            get => _windowTitleScrollable;
+            set
+            {
+                SetAndNotify(ref _windowTitleScrollable, value);
+                ConfigurationHelper.SetValue(ConfigurationKeys.WindowTitleScrollable, value.ToString());
+                var rvm = (RootViewModel)this.Parent;
+                rvm.WindowTitleScrollable = value;
+            }
+        }
+
         private bool _hideCloseButton = Convert.ToBoolean(ConfigurationHelper.GetValue(ConfigurationKeys.HideCloseButton, bool.FalseString));
 
         /// <summary>
@@ -3738,7 +3953,7 @@ namespace MaaWpfGui.ViewModels.UI
             }
         }
 
-        private bool _useLogItemDateFormat = Convert.ToBoolean(ConfigurationHelper.GetValue(ConfigurationKeys.UseLogItemDateFormat, bool.FalseString));
+        private bool _useLogItemDateFormat = true; // Convert.ToBoolean(ConfigurationHelper.GetValue(ConfigurationKeys.UseLogItemDateFormat, bool.FalseString));
 
         public bool UseLogItemDateFormat
         {
@@ -3955,6 +4170,36 @@ namespace MaaWpfGui.ViewModels.UI
                     default:
                         throw new ArgumentOutOfRangeException();
                 }
+            }
+        }
+
+        private static readonly Dictionary<string, string> _windowTitleAllShowDict = new()
+        {
+            { LocalizationHelper.GetString("ConfigurationName"), "1" },
+            { LocalizationHelper.GetString("ConnectionPreset"), "2" },
+            { LocalizationHelper.GetString("ConnectionAddress"), "3" },
+            { LocalizationHelper.GetString("ClientType"), "4" },
+        };
+
+        private List<string> _windowTitleAllShowList = [.. _windowTitleAllShowDict.Keys];
+
+        public List<string> WindowTitleAllShowList
+        {
+            get => _windowTitleAllShowList;
+            set => SetAndNotify(ref _windowTitleAllShowList, value);
+        }
+
+        private object[] _windowTitleSelectShowList = ConfigurationHelper.GetValue(ConfigurationKeys.WindowTitleSelectShowList, "1 2 3 4").Split(' ').Select(s => _windowTitleAllShowDict.FirstOrDefault(pair => pair.Value == s).Key).ToArray();
+
+        public object[] WindowTitleSelectShowList
+        {
+            get => _windowTitleSelectShowList;
+            set
+            {
+                SetAndNotify(ref _windowTitleSelectShowList, value);
+                UpdateWindowTitle();
+                var config = string.Join(' ', _windowTitleSelectShowList.Cast<string>().Select(s => _windowTitleAllShowDict[s]));
+                ConfigurationHelper.SetValue(ConfigurationKeys.WindowTitleSelectShowList, config);
             }
         }
 
